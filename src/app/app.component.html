@@ -1,20 +1,221 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<html>
 
+<head>
+  <script>
+    $(document).ready(function () {
+      console.log("ready!");
+
+      $(function () {
+        alert('here')
+        var $input = $("input[name='keyword']"),
+          $context = $("table tbody tr");
+        $input.on("input", function () {
+          var term = $(this).val();
+          $context.show().unmark();
+          if (term) {
+            $context.mark(term, {
+              done: function () {
+                $context.not(":has(mark)").hide();
+              }
+            });
+          }
+        });
+      });
+    });
+
+  </script>
+  
+  <style>
+    mark {
+      background: orange;
+      color: inherit;
+      padding: 0;
+    }
+  </style>
+  <body>
+<input type="text" name="keyword" class="form-control input-sm" placeholder="Search term...">
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>President</th>
+      <th>Birthplace</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zachary Taylor</td>
+      <td>Barboursville, Virginia</td>
+    </tr>
+    <tr>
+      <td>Warren G. Harding</td>
+      <td>Blooming Grove, Ohio</td>
+    </tr>
+    <tr>
+      <td>John Quincy Adams</td>
+      <td>Braintree, Massachusetts</td>
+    </tr>
+    <tr>
+      <td>John F. Kennedy</td>
+      <td>Brookline, Massachusetts</td>
+    </tr>
+    <tr>
+      <td>Grover Cleveland</td>
+      <td>Caldwell, New Jersey</td>
+    </tr>
+    <tr>
+      <td>William Henry Harrison</td>
+      <td>Charles City County, Virginia</td>
+    </tr>
+    <tr>
+      <td>John Tyler</td>
+      <td>Charles City County, Virginia</td>
+    </tr>
+    <tr>
+      <td>William Howard Taft</td>
+      <td>Cincinnati, Ohio</td>
+    </tr>
+    <tr>
+      <td>James Buchanan</td>
+      <td>Cove Gap, Pennsylvania</td>
+    </tr>
+    <tr>
+      <td>Rutherford B. Hayes</td>
+      <td>Delaware, Ohio</td>
+    </tr>
+    <tr>
+      <td>Dwight D. Eisenhower</td>
+      <td>Denison, Texas</td>
+    </tr>
+    <tr>
+      <td>Chester A. Arthur</td>
+      <td>Fairfield, Vermont</td>
+    </tr>
+    <tr>
+      <td>Franklin Pierce</td>
+      <td>Hillsborough, New Hampshire</td>
+    </tr>
+    <tr>
+      <td>Barack Obama</td>
+      <td>Honolulu, Hawaii</td>
+    </tr>
+    <tr>
+      <td>Bill Clinton</td>
+      <td>Hope, Arkansas</td>
+    </tr>
+    <tr>
+      <td>Franklin D. Roosevelt</td>
+      <td>Hyde Park, New York</td>
+    </tr>
+    <tr>
+      <td>Martin Van Buren</td>
+      <td>Kinderhook, New York</td>
+    </tr>
+    <tr>
+      <td>Harry S. Truman</td>
+      <td>Lamar, Missouri</td>
+    </tr>
+    <tr>
+      <td>Andrew Jackson</td>
+      <td>Lancaster County, South Carolina</td>
+    </tr>
+    <tr>
+      <td>George H. W. Bush</td>
+      <td>Milton, Massachusetts</td>
+    </tr>
+    <tr>
+      <td>James A. Garfield</td>
+      <td>Moreland Hills, Ohio</td>
+    </tr>
+    <tr>
+      <td>George W. Bush</td>
+      <td>New Haven, Connecticut</td>
+    </tr>
+    <tr>
+      <td>Theodore Roosevelt</td>
+      <td>New York City, New York</td>
+    </tr>
+    <tr>
+      <td>William McKinley</td>
+      <td>Niles, Ohio</td>
+    </tr>
+    <tr>
+      <td>Abraham Lincoln</td>
+      <td>Nolin Creek, Kentucky</td>
+    </tr>
+    <tr>
+      <td>Benjamin Harrison</td>
+      <td>North Bend, Ohio</td>
+    </tr>
+    <tr>
+      <td>Gerald Ford</td>
+      <td>Omaha, Nebraska</td>
+    </tr>
+    <tr>
+      <td>James K. Polk</td>
+      <td>Pineville, North Carolina</td>
+    </tr>
+    <tr>
+      <td>Jimmy Carter</td>
+      <td>Plains, Georgia</td>
+    </tr>
+    <tr>
+      <td>Calvin Coolidge</td>
+      <td>Plymouth, Vermont</td>
+    </tr>
+    <tr>
+      <td>Ulysses S. Grant</td>
+      <td>Point Pleasant, Ohio</td>
+    </tr>
+    <tr>
+      <td>James Madison</td>
+      <td>Port Conway, Virginia</td>
+    </tr>
+    <tr>
+      <td>John Adams</td>
+      <td>Braintree, Massachusetts</td>
+    </tr>
+    <tr>
+      <td>Andrew Johnson</td>
+      <td>Raleigh, North Carolina</td>
+    </tr>
+    <tr>
+      <td>Thomas Jefferson</td>
+      <td>Shadwell, Virginia</td>
+    </tr>
+    <tr>
+      <td>Lyndon B. Johnson</td>
+      <td>Stonewall, Texas</td>
+    </tr>
+    <tr>
+      <td>Woodrow Wilson</td>
+      <td>Staunton, Virginia</td>
+    </tr>
+    <tr>
+      <td>Millard Fillmore</td>
+      <td>Moravia, New York</td>
+    </tr>
+    <tr>
+      <td>Ronald Reagan</td>
+      <td>Tampico, Illinois</td>
+    </tr>
+    <tr>
+      <td>Herbert Hoover</td>
+      <td>West Branch, Iowa</td>
+    </tr>
+    <tr>
+      <td>George Washington</td>
+      <td>Westmoreland County, Virginia</td>
+    </tr>
+    <tr>
+      <td>James Monroe</td>
+      <td>Westmoreland County, Virginia</td>
+    </tr>
+    <tr>
+      <td>Richard Nixon</td>
+      <td>Yorba Linda, California</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</head>
+</html>
